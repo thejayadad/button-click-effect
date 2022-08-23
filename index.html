@@ -11,34 +11,35 @@ body{
     display: grid;
     place-items: center;
 }
-button{
+button {
     height: 100px;
     width: 250px;
-    background-color: orangered;
-    border: 5px solid #202538;
+    background: orangered;
+    border: 5px solid black;
     position: relative;
     cursor: pointer;
 }
-button:before,
+button::before,
 button:after{
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: orangered;
-    border: 5px solid #202538;
-    transition: 0.3s;
-
+    border: 5px solid black;
+    transition: .3s;
 }
-button:before{
+button::before{
     bottom: -15px;
     left: -15px;
     z-index: -1;
 }
-button:after{
+
+
+button::after{
     content: attr(data-text);
     color: #202538;
-    font-family: 'Poppins',sans-serif;
+    font-family: monospace;
     font-size: 22px;
     letter-spacing: 3px;
     display: grid;
@@ -47,21 +48,18 @@ button:after{
     right: -15px;
     z-index: 1;
     color: white;
-
 }
-button:hover:before{
+button:hover::before{
     bottom: -5px;
     left: -5px;
-    color: white;
-
+    columns: white;
 }
-button:hover:after{
+button:hover::after{
     top: -5px;
     right: -5px;
     background-color: #202538;
     color: #e8ebf0;
 }
-
     </style>
 </head>
 <body>
